@@ -4,11 +4,52 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
-body {
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e80202;
   overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #e80202;
+  transform: rotate(45deg);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.heart::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e80202;
+  border-radius: 50%;
+  box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: #e80202;
+  border-radius: 50%;
+  box-shadow: -20px 0 20px rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -19,19 +60,10 @@ section {
   background: linear-gradient(135deg, #111, #222, #111);
 }
 
-section::before {
-  content: "";
-  position: absolute;
-  width: 30vw;
-  height: 30vw;
-  border: 5vw solid #ff1062;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1vw #222, 0 0 0 1.3vw #fff;
-}
-
 h2 {
   position: absolute;
   font-size: 9vw;
+  font-family: "Poppins";
   color: #fff;
   text-align: center;
   line-height: 2em;
@@ -40,14 +72,6 @@ h2 {
   text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #ccc, 3px 3px 0 #ccc, 4px 4px 0 #ccc,
     5px 5px 0 #ccc, 10px 10px 0 rgba(0, 0, 0, 0.2);
   animation: floating 5s ease-in-out infinite;
-}
-
-h2 span {
-  font-weight: 700;
-  font-size: 3em;
-  text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #ccc, 3px 3px 0 #ccc, 4px 4px 0 #ccc,
-    5px 5px 0 #ccc, 6px 6px 0 #ccc, 7px 7px 0 #ccc, 8px 8px 0 #ccc,
-    9px 9px 0 #ccc, 20px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 @keyframes floating {
